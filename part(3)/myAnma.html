@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adjust Card Height and Gap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* .hellomy {
+            border-radius: 8px;
+            height: 300px;
+
+            margin: 0 10px;
+
+        }
+
+        .hellomy:hover {
+            box-shadow: 2px 2px 10px black;
+        }
+
+        .width-controller {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .txt-captino {
+            text-align: center;
+        }
+
+        .scroll-container {
+            overflow-x: hidden;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .scroll-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .hellomy {
+                border-radius: 8px;
+                height: 200px;
+                margin: 0 10px;
+           
+            }
+        }
+ */
+    .myBox {
+      width: 200px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 15px;
+
+    }
+
+    .myBox:hover {
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.456);
+      border-radius: 15px;
+
+    }
+
+
+
+
+
+    /* -----------------------CICLES-BOXES--------------------------- */
+
+    .myRound {
+      border-radius: 50% !important;
+      object-fit: cover !important;
+      width: 150px !important;
+      height: 150px !important;
+      border: 1px solid black !important;
+      background-image: linear-gradient(rgba(195, 0, 255, 0.281), rgba(0, 217, 255, 0.281)) !important;
+    }
+
+    .myRound:hover {
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.456);
+      border-radius: 15px;
+
+    }
+
+    .myScorler {
+      overflow-x: auto !important;
+      white-space: nowrap !important;
+      padding-bottom: 10px;
+      /* Adds some space below */
+    }
+
+    .myScorler .col {
+      display: inline-block !important;
+      /* Keeps columns in a horizontal line */
+      margin-right: 15px;
+      /* Adds spacing between images */
+    }
+
+    /* <!-- ---------------------BOXES-HEART-HOVER-FOUR-BOXES------------------- --> */
+    .box-img1 {
+      background-image: url(https://i.etsystatic.com/22964628/r/il/2e05bd/5380148586/il_300x300.5380148586_pyf3.jpg);
+      border-radius: 12px;
+      height: 330px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .box-img1:hover {
+      box-shadow: 2px 2px 10px black;
+      border-radius: 20px;
+    }
+
+    .box-img2 {
+      background-image: url(https://i.etsystatic.com/27533978/c/965/766/0/167/il/2be9b3/5964258890/il_300x300.5964258890_mriq.jpg);
+      border-radius: 12px;
+      height: 330px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .box-img2:hover {
+      box-shadow: 2px 2px 10px black;
+      border-radius: 20px;
+    }
+
+    .box-img3 {
+      background-image: url(https://i.etsystatic.com/21162753/r/il/330596/6231212291/il_300x300.6231212291_ocd3.jpg);
+      border-radius: 12px;
+      height: 330px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .box-img3:hover {
+      box-shadow: 2px 2px 10px black;
+      border-radius: 20px;
+    }
+
+    .box-img4 {
+      background-image: url(https://i.etsystatic.com/21162753/c/1365/1083/0/97/il/0f04d9/6168567099/il_300x300.6168567099_hy30.jpg);
+      border-radius: 12px;
+      height: 330px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .box-img4:hover {
+      box-shadow: 2px 2px 10px black;
+      border-radius: 20px;
+    }
+
+    .box-img5 {
+      background-image: url(https://i.etsystatic.com/21162753/c/563/563/0/0/il/53762e/6278672457/il_300x300.6278672457_3aao.jpg);
+      border-radius: 12px;
+      height: 330px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .box-img5:hover {
+      box-shadow: 2px 2px 10px black;
+      border-radius: 20px;
+    }
+
+    .white-round {
+      padding: 6px;
+      background: #fff;
+      position: absolute;
+
+    }
+
+    @media only screen and (max-width:700px) {
+      .box-img5 {
+        display: none;
+      }
+    }
+ /* <!-- -----------------------ANOTHER-NEW-ETSY-CARDS---------------------- --> */
+
+ .card img {
+            object-fit: cover;
+            height: 200px;
+        }
+        .price {
+            font-weight: bold;
+        }
+        .discounted {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .editor-picks {
+            margin-top: 20px;
+        }
+        .see-more {
+            background-color: #f8f9fa;
+            border: none;
+            color: #6c757d;
+        }
+    /* ----------------MORE-CARDS-HERE--------------- */
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .cardem {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .cardem:hover {
+      transform: scale(1.05);
+    }
+
+    .cardem img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card-contents {
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: bold;
+      margin: 0 0 10px;
+    }
+
+    .card-price {
+      font-size: 0.9rem;
+      color: #4caf50;
+    }
+
+    .card-price del {
+      color: #999;
+      margin-left: 5px;
+    }
+
+    .card-badge {
+      font-size: 0.8rem;
+      background-color: #ff9800;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 15px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .myShad{
+      padding: 20px;
+    }
+
+    .myShad:hover{
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.483);
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="text-center">Shop our most popular categories</h1>
+  <div class="container myScorler ">
+    <div class="d-inline-flex">
+      <div class="col"><img
+          src="https://i.etsystatic.com/8595828/c/2586/2055/254/419/il/7e0b90/2293624124/il_300x300.2293624124_8mbk.jpg"
+          alt="" height="230px" width="auto" class="myBox"></div>
+      <div class="col"><img
+          src="https://i.etsystatic.com/15777598/c/2521/2003/258/193/il/64a0c8/2796261612/il_300x300.2796261612_g1nk.jpg"
+          alt="" height="230px" width="auto" class="myBox"></div>
+      <div class="col"><img
+          src="https://i.etsystatic.com/14817340/c/1851/1471/47/601/il/ae3f37/2941378615/il_300x300.2941378615_3jcf.jpg"
+          alt="" height="230px" width="auto" class="myBox"></div>
+      <div class="col"><img
+          src="https://i.etsystatic.com/45781337/c/1622/1622/257/177/il/68108d/6295436067/il_300x300.6295436067_aplv.jpg"
+          alt="" height="230px" width="auto" class="myBox"></div>
+      <div class="col"><img
+          src="https://i.etsystatic.com/22195950/r/il/582901/3571682397/il_300x300.3571682397_6tg9.jpg" alt=""
+          height="230px" width="auto" class="myBox"></div>
+      <div class="col"><img
+          src="https://i.etsystatic.com/44161790/r/il/226159/5729625769/il_300x300.5729625769_3jbx.jpg" alt=""
+          height="230px" width="auto" class="myBox"></div>
+    </div>
+  </div>
+
+
+  <!-- ----------------------------CIRCLE BOXES-------------------------- -->
+  <h3 style="text-align: center;">Thoughtful Valentine’s Day gifts for every love in your life!</h3>
+  <div class="container myScorler">
+    <div class="d-inline-flex">
+      <div class="col myShad"><img
+          src="https://i.etsystatic.com/ij/733dca/6586968809/ij_300x300.6586968809_q0zid5sd.jpg?version=0" alt=""
+          height="230px" width="auto" class="myRound"></div>
+      <div class="col myShad"><img
+          src="https://i.etsystatic.com/25304800/r/il/b9d4bd/6297597679/il_300x300.6297597679_bc6n.jpg" alt=""
+          height="230px" width="auto" class="myRound"></div>
+      <div class="col myShad"><img
+          src="https://i.etsystatic.com/11118406/c/2048/2048/0/0/il/4e57ad/3571041628/il_300x300.3571041628_d0kp.jpg"
+          alt="" height="230px" width="auto" class="myRound"></div>
+      <div class="col myShad"><img
+          src="https://i.etsystatic.com/54757727/c/1307/1307/345/381/il/0ec30b/6294906136/il_300x300.6294906136_chtg.jpg"
+          alt="" height="230px" width="auto" class="myRound"></div>
+      <div class="col myShad"><img
+          src="https://i.etsystatic.com/43790300/r/il/15e507/6401998736/il_300x300.6401998736_tv40.jpg" alt=""
+          height="230px" width="auto" class="myRound"></div>
+      <div class="col myShad"><img
+          src="https://i.etsystatic.com/46184616/c/1990/1990/179/187/il/0f6752/6091488520/il_300x300.6091488520_tcxw.jpg"
+          alt="" height="230px" width="auto" class="myRound"></div>
+    </div>
+  </div>
+
+  <!-- ---------------------BOXES-HEART-HOVER-FOUR-BOXES------------------- -->
+  <!-- <div class="width-controller mt-5 mb-5">
+    <div class="row g-4">  Use only one gap class
+      <div class="col-sm-4 col-md-6 col-lg-2 box-img1">
+        <h4 class="white-round">USD200.90</h4>
+      </div>
+      <div class="col-sm-4 col-md-6 col-lg-2 box-img1">
+        <h4 class="white-round">USD200.90</h4>
+      </div>
+      <div class="col-sm-4 col-md-6 col-lg-2 box-img3">
+        <h4 class="white-round">USD200.90</h4>
+      </div>
+      <div class="col-sm-3 col-md-6 col-lg-2 box-img4">
+        <h4 class="white-round">USD200.90</h4>
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-2 box-img5">
+        <h4 class="white-round non">USD200.90</h4>
+      </div>
+    </div>
+  </div> -->
+
+  <style>
+ @media only screen and (max-width:998px) {
+  .non{
+      display: none;
+    }
+ }
+  </style>
+
+  <div class="container">
+    <div class="row ">
+      <div class="col mt-3 mb-3 col-md-2 col-sm-4 col-lg-2 box-img1" style="margin-left: 20px;">USD200.90</div>
+      <div class="col mt-3 mb-3 col-md-2 col-sm-4 col-lg-2 box-img1" style="margin-left: 20px;">USD200.90</div>
+      <div class="col mt-3 mb-3 col-md-2 col-sm-4 col-lg-2 box-img3" style="margin-left: 20px;">USD200.90</div>
+      <div class="col mt-3 mb-3 col-md-2 col-sm-4 col-lg-2 box-img4" style="margin-left: 20px;">USD200.90</div>
+      <div class="col mt-3 mb-3 col-md-2 non col-sm-4 col-lg-2 box-img5" style="margin-left: 20px;">USD200.90</div>
+    </div>
+  </div>
+  <!-- -------------------------MORE-CARDS- HERE-------------------- -->
+  <div class="card-container width-controller">
+    <!-- Card 1 -->
+    <div class="cardem">
+      <img src="https://i.etsystatic.com/15888388/r/il/5a8951/5754810101/il_600x600.5754810101_j0aq.jpg"
+        alt="Plant Garden Marker">
+      <div class="card-contents">
+        <p class="card-title">Plant Garden Marker</p>
+        <p class="card-price">USD 1.50 <del>USD 2.00</del></p>
+        <p class="card-badge">25% off</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="cardem">
+      <img src="https://i.etsystatic.com/19638867/r/il/690759/2975262971/il_600x600.2975262971_aym5.jpg"
+        alt="Crochet Pattern">
+      <div class="card-contents">
+        <p class="card-title">CROCHET PATTERN</p>
+        <p class="card-price">USD 6.73 <del>USD 13.46</del></p>
+        <p class="card-badge">50% off</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="cardem">
+      <img
+        src="https://i.etsystatic.com/13305897/c/1834/1834/421/50/il/095aea/6427971225/il_600x600.6427971225_it62.jpg"
+        alt="Leather Drawer Pull">
+      <div class="card-contents">
+        <p class="card-title">Leather Drawer Pull</p>
+        <p class="card-price">USD 6.91</p>
+        <p class="card-badge">Bestseller</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="cardem">
+      <img src="https://i.etsystatic.com/52389335/r/il/1812fd/6115638810/il_600x600.6115638810_fi1f.jpg"
+        alt="Leather Drawer Pull">
+      <div class="card-contents">
+        <p class="card-title">Leather Drawer Pull</p>
+        <p class="card-price">USD 6.91</p>
+        <p class="card-badge">Bestseller</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="cardem">
+      <img src="https://i.etsystatic.com/36693553/r/il/772967/5131793622/il_600x600.5131793622_44ga.jpg"
+        alt="Leather Drawer Pull">
+      <div class="card-contents">
+        <p class="card-title">Leather Drawer Pull</p>
+        <p class="card-price">USD 6.91</p>
+        <p class="card-badge">Bestseller</p>
+      </div>
+    </div>
+
+
+
+    <!-- Add more cards as needed -->
+  </div>
+
+  <!-- --------------------- ANOTHER ONE-------------------- -->
+  <div class=" my-5">
+    <h2 class="text-center mb-4">Shop extraordinary items at special prices</h2>
+    <div class="scroll-container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <img
+              src="https://i.etsystatic.com/32449061/c/1459/1459/1114/362/il/f515a3/6362798735/il_300x300.6362798735_n5v6.jpg"
+              class="card-img" alt="Home Improvement">
+            <div class="card-body text-center">
+              <h6 class="card-title">Home Improvement</h6>
+              <p class="card-text">up to 20% off</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="https://i.etsystatic.com/32449061/c/1459/1459/1114/362/il/f515a3/6362798735/il_300x300.6362798735_n5v6.jpg"
+              class="card-img" alt="Valentine's Day Gifts">
+            <div class="card-body text-center">
+              <h6 class="card-title">Valentine's Day Gifts</h6>
+              <p class="card-text">up to 20% off</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="https://i.etsystatic.com/32449061/c/1459/1459/1114/362/il/f515a3/6362798735/il_300x300.6362798735_n5v6.jpg"
+              class="card-img" alt="Bedding">
+            <div class="card-body text-center">
+              <h6 class="card-title">Bedding</h6>
+              <p class="card-text">up to 20% off</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="https://i.etsystatic.com/32449061/c/1459/1459/1114/362/il/f515a3/6362798735/il_300x300.6362798735_n5v6.jpg"
+              class="card-img" alt="Matching Couple Sweatshirts">
+            <div class="card-body text-center">
+              <h6 class="card-title">Matching Couple Sweatshirts</h6>
+              <p class="card-text">up to 30% off</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="https://i.etsystatic.com/32449061/c/1459/1459/1114/362/il/f515a3/6362798735/il_300x300.6362798735_n5v6.jpg"
+              class="card-img" alt="Trending: Cherry Red finds">
+            <div class="card-body text-center">
+              <h6 class="card-title">Trending: Cherry Red finds</h6>
+              <p class="card-text">up to 20% off</p>
+            </div>
+          </div>
+        </div>
+      </div> <!--  row -->
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- -----------------------ANOTHER-NEW-ETSY-CARDS---------------------- -->
+ 
+<div class="container mt-5">
+  <div class="text-center mb-4">
+      <h2>Editors’ Picks</h2>
+      <h3>Gifts for Her</h3>
+      <button class="btn see-more">See more</button>
+  </div>
+
+  <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-3">
+         <h1>hwllo etsy??</h1>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptatibus!</p>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+          <div class="card">
+              <img src="https://i.etsystatic.com/32449061/c/1459/1459/1114/362/il/f515a3/6362798735/il_300x300.6362798735_n5v6.jpg" class="card-img-top" alt="Wooden pens">
+              <div class="card-body text-center">
+                  <p class="price">USD 45.00</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+          <div class="card">
+              <img src="https://i.etsystatic.com/32449061/c/1459/1459/1114/362/il/f515a3/6362798735/il_300x300.6362798735_n5v6.jpg" class="card-img-top" alt="Gold G necklace">
+              <div class="card-body text-center">
+                  <p class="price">USD 576.00 <span class="discounted">USD 640.00</span></p>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+          <div class="card">
+              <img src="https://i.etsystatic.com/32449061/c/1459/1459/1114/362/il/f515a3/6362798735/il_300x300.6362798735_n5v6.jpg" class="card-img-top" alt="Gold bracelet">
+              <div class="card-body text-center">
+                  <p class="price">USD 1,136.20 <span class="discounted">USD 1,748.00</span></p>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+          <div class="card">
+              <img src="https://i.etsystatic.com/32449061/c/1459/1459/1114/362/il/f515a3/6362798735/il_300x300.6362798735_n5v6.jpg" class="card-img-top" alt="Woman with coffee">
+              <div class="card-body text-center">
+                  <p class="price">USD 189.00</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+          <div class="card">
+              <img src="https://i.etsystatic.com/32449061/c/1459/1459/1114/362/il/f515a3/6362798735/il_300x300.6362798735_n5v6.jpg" class="card-img-top" alt="Hoodie">
+              <div class="card-body text-center">
+                  <p class="price">USD 66.00 <span class="discounted">USD 80.00</span></p>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+          <div class="card">
+              <img src="https://i.etsystatic.com/32449061/c/1459/1459/1114/362/il/f515a3/6362798735/il_300x300.6362798735_n5v6.jpg" class="card-img-top" alt="Bagel card">
+              <div class="card-body text-center">
+                  <p class="price">USD 6.40</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- ----------------------WHAT IS ETSY?----------------------- -->
+  
+  <div class="container py-5 " style="   background-color: #fff9e6; 
+   color: #333; ">
+    <!-- Main Header -->
+    <div class="text-center mb-5">
+      <h1 class="display-5">What is Etsy?</h1>
+      <a href="#" class="underline-link">Read our wonderfully weird story</a>
+    </div>
+
+    <!-- Three-Column Layout -->
+    <div class="row text-center text-md-start">
+      <!-- Column 1 -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="highlight">A community doing good</h5>
+        <p>
+          Etsy is a global online marketplace, where people come together to make, sell, buy and collect unique items.
+          We’re also a community pushing for positive change for small businesses, people, and the planet.
+          <a href="#" class="underline-link">Here are some of the ways we’re making a positive impact, together.</a>
+        </p>
+      </div>
+      <!-- Column 2 -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="highlight">Support independent creators</h5>
+        <p>
+          There’s no Etsy warehouse – just millions of people selling the things they love. We make the whole process
+          easy,
+          helping you connect directly with makers to find something extraordinary.
+        </p>
+      </div>
+      <!-- Column 3 -->
+      <div class="col-md-4">
+        <h5 class="highlight">Peace of mind</h5>
+        <p>
+          Your privacy is the highest priority of our dedicated team. And if you ever need assistance, we are always
+          ready
+          to step in for support.
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="text-center mt-5">
+      <p class="mb-3">Have a question? Well, we’ve got some answers.</p>
+      <a href="#" class="btn help-center-btn">Go to Help Centre</a>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer style="   background-color: #2e3b88; 
+        color: #fff;">
+    <div class="footer py-4">
+      <div class="container">
+        <!-- Accordion for Mobile -->
+        <div class="accordion d-md-none" id="footerAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#shopLinks" aria-expanded="false">
+                Shop
+              </button>
+            </h2>
+            <div id="shopLinks" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <ul class="list-unstyled">
+                  <li><a href="#">Gift Cards</a></li>
+                  <li><a href="#">Etsy Registry</a></li>
+                  <li><a href="#">Sitemap</a></li>
+                  <li><a href="#">Etsy Blog</a></li>
+                  <li><a href="#">Etsy United Kingdom</a></li>
+                  <li><a href="#">Etsy Germany</a></li>
+                  <li><a href="#">Etsy Canada</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#sellLinks" aria-expanded="false">
+                Sell
+              </button>
+            </h2>
+            <div id="sellLinks" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <ul class="list-unstyled">
+                  <li><a href="#">Sell on Etsy</a></li>
+                  <li><a href="#">Teams</a></li>
+                  <li><a href="#">Forums</a></li>
+                  <li><a href="#">Affiliates & Creators</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#aboutLinks" aria-expanded="false">
+                About
+              </button>
+            </h2>
+            <div id="aboutLinks" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <ul class="list-unstyled">
+                  <li><a href="#">Etsy, Inc.</a></li>
+                  <li><a href="#">Policies</a></li>
+                  <li><a href="#">Investors</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Press</a></li>
+                  <li><a href="#">Impact</a></li>
+                  <li><a href="#">Legal Imprint</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#helpLinks" aria-expanded="false">
+                Help
+              </button>
+            </h2>
+            <div id="helpLinks" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <ul class="list-unstyled">
+                  <li><a href="#">Help Centre</a></li>
+                  <li><a href="#">Privacy Settings</a></li>
+                </ul>
+                <div class="d-flex gap-2 mt-3">
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-pinterest"></i></a>
+                  <a href="#"><i class="bi bi-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Desktop Layout -->
+        <div class="row d-none d-md-flex">
+          <div class="col-md-3 text-center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV_nUjjg7irFty5r0VXSFSfUnAAdDnVDfJ-w&s"
+              alt="Logo" class="img-fluid mb-3">
+            <button class="btn btn-primary">Download the Etsy App</button>
+          </div>
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-3 footer-links">
+                <h5>Shop</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Gift Cards</a></li>
+                  <li><a href="#">Etsy Registry</a></li>
+                  <li><a href="#">Sitemap</a></li>
+                  <li><a href="#">Etsy Blog</a></li>
+                  <li><a href="#">Etsy United Kingdom</a></li>
+                  <li><a href="#">Etsy Germany</a></li>
+                  <li><a href="#">Etsy Canada</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-3 footer-links">
+                <h5>Sell</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Sell on Etsy</a></li>
+                  <li><a href="#">Teams</a></li>
+                  <li><a href="#">Forums</a></li>
+                  <li><a href="#">Affiliates & Creators</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-3 footer-links">
+                <h5>About</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Etsy, Inc.</a></li>
+                  <li><a href="#">Policies</a></li>
+                  <li><a href="#">Investors</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Press</a></li>
+                  <li><a href="#">Impact</a></li>
+                  <li><a href="#">Legal Imprint</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-3 footer-links">
+                <h5>Help</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Help Centre</a></li>
+                  <li><a href="#">Privacy Settings</a></li>
+                  <div class="d-flex gap-2 mt-3">
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-pinterest"></i></a>
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+          <p>© 2025 Etsy, Inc.</p>
+          <div>
+            <a href="#">Terms of Use</a> |
+            <a href="#">Privacy</a> |
+            <a href="#">Interest-based Ads</a> |
+            <a href="#">Local Shops</a> |
+            <a href="#">Regions</a>
+          </div>
+          <div>
+            <span>🌍 Pakistan</span> |
+            <span>English (UK)</span> |
+            <span>$ (USD)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
